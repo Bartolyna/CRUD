@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\ActaController; //Se hace referencia al controlador
 
 /*
 |--------------------------------------------------------------------------
@@ -16,3 +17,12 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+/* 
+Route::get('/acta', function () {
+    return view('acta.index');
+});
+
+Route::get('/acta/create', [ActaController::class, 'create']);
+ */
+
+ Route::resource('acta', ActaController::class);
