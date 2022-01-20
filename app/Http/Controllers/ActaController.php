@@ -35,7 +35,14 @@ class ActaController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $datosActa = $request->except('_token');
+
+        if ($request->hasFile('Documento')) {
+            $datosActa['Documento']=$request->file('Documento')->store('uploads','public');
+        }
+
+        Acta::insert($datosActa);
+        return response()->json($datosActa);
     }
 
     /**
