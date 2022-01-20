@@ -1,1 +1,46 @@
-index
+<table class="table table-light">
+   
+   
+    <thead class="thead-light">
+        <tr>
+            <th>#</th>
+            <th>Nombre de Usuario</th>
+            <th>Ubicacion</th>
+            <th>Tipo de Solocitud</th>
+            <th>Fecha</th>
+            <th>Descripcion</th>
+            <th>Serial</th>
+            <th>Equipo</th>
+            <th>Responsable</th>
+            <th>Version</th>
+            <th>Observacion</th>
+            <th>Documento</th>
+            <th>Acciones</th>
+        </tr>
+    </thead>
+
+
+    <tbody>
+        @foreach ($actas as $acta)
+        <tr>
+            <td>{{ $acta->id }}</td>
+            <td>{{ $acta->Usuario }}</td>
+            <td>{{ $acta->Ubicacion }}</td>
+            <td>{{ $acta->Tipo_Solicitud }}</td>
+            <td>{{ $acta->Fecha }}</td>
+            <td>{{ $acta->Descripcion }}</td>
+            <td>{{ $acta->Serial }}</td>
+            <td>{{ $acta->Equipo }}</td>
+            <td>{{ $acta->Responsable }}</td>
+            <td>{{ $acta->Version }}</td>
+            <td>{{ $acta->Observacion }}</td>
+            <td>{{ $acta->Documento }}</td>
+            <td></td>
+        </tr>
+        @endforeach   
+    </tbody>
+
+        
+        
+
+</table>

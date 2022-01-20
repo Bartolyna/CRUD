@@ -14,7 +14,8 @@ class ActaController extends Controller
      */
     public function index()
     {
-        return view('acta.index');
+        $datos['actas'] = Acta::paginate(5);
+        return view('acta.index', $datos);
     }
 
     /**
@@ -42,6 +43,7 @@ class ActaController extends Controller
         }
 
         Acta::insert($datosActa);
+
         return response()->json($datosActa);
     }
 
