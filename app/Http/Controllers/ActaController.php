@@ -64,9 +64,11 @@ class ActaController extends Controller
      * @param  \App\Models\Acta  $acta
      * @return \Illuminate\Http\Response
      */
-    public function edit(Acta $acta)
+    public function edit($id)
     {
-        return view('acta.edit');
+        $acta = Acta::findOrFail($id);
+
+        return view('acta.edit', compact('acta'));
     }
 
     /**
@@ -76,9 +78,13 @@ class ActaController extends Controller
      * @param  \App\Models\Acta  $acta
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Acta $acta)
+    public function update(Request $request,  $id)
     {
-        //
+        $datosActa = $request->except(['_token','_method']);
+        Acta::where('id','=',$id)->update($datosActa);
+
+        $acta = Acta::findOrFail($id);
+        return view('acta.edit', compact('acta'));
     }
 
     /**
