@@ -87,8 +87,9 @@ class ActaController extends Controller
      * @param  \App\Models\Acta  $acta
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Acta $acta)
+    public function destroy($id)
     {
-        //
+       Acta::destroy($id);
+       return redirect('acta');
     }
 }

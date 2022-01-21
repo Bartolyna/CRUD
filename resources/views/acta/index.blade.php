@@ -35,7 +35,16 @@
             <td>{{ $acta->Version }}</td>
             <td>{{ $acta->Observacion }}</td>
             <td>{{ $acta->Documento }}</td>
-            <td></td>
+            <td>Editar /
+            
+            <form action="{{ url('acta/'.$acta->id) }}" method="post">
+            @csrf
+            {{ method_field('DELETE')}}    
+                <input type="submit" onclick="return confirm('¿Quieres borrar?') " value="Borrar">
+
+            </form>
+                
+            </td>
         </tr>
         @endforeach   
     </tbody>
