@@ -66,7 +66,7 @@ class ActaController extends Controller
      */
     public function edit(Acta $acta)
     {
-        //
+        return view('acta.edit');
     }
 
     /**

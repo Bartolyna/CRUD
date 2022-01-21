@@ -35,7 +35,11 @@
             <td>{{ $acta->Version }}</td>
             <td>{{ $acta->Observacion }}</td>
             <td>{{ $acta->Documento }}</td>
-            <td>Editar /
+            <td>
+                <a href="{{ url('acta/'.$acta->id.'/edit') }}">Editar</a>
+                 
+                
+                /
             
             <form action="{{ url('acta/'.$acta->id) }}" method="post">
             @csrf

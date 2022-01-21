@@ -1,1 +1,1 @@
-edit
+@include('acta.form')
