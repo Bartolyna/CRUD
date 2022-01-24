@@ -43,5 +43,7 @@
     <input type="file" name="Documento" value="{{ isset($acta->Documento)?$acta->Documento:''}}" id="Documento">
     <br>
 
+    <a href="{{ url('acta')}}">Ir al index</a>
+
 
     <input type="submit" value="Enviar">

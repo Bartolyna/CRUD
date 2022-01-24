@@ -1,6 +1,5 @@
-<table class="table table-light">
-   
-   
+<a href="{{ url('acta/create')}}">Creacion de acta</a>
+<table class="table table-light">   
     <thead class="thead-light">
         <tr>
             <th>#</th>
