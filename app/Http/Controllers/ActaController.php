@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Acta;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 
 class ActaController extends Controller
 {
@@ -95,7 +96,14 @@ class ActaController extends Controller
      */
     public function destroy($id)
     {
-       Acta::destroy($id);
+        
+    $acta = Acta::findOrFail($id);
+
+    if(Storage::delete('public/'.$acta->Documento)){
+
+        Acta::destroy($id);
+
+    }     
        return redirect('acta');
     }
 }
