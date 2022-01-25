@@ -45,7 +45,8 @@ class ActaController extends Controller
 
         Acta::insert($datosActa);
 
-        return response()->json($datosActa);
+        //return response()->json($datosActa);
+        return redirect('acta')->with('mensaje','Acta agreagado con exito');
     }
 
     /**
@@ -104,6 +105,7 @@ class ActaController extends Controller
         Acta::destroy($id);
 
     }     
-       return redirect('acta');
+       //return redirect('acta');
+       return redirect('acta')->with('mensaje','Acta eliminada con exito');
     }
 }

@@ -3,6 +3,6 @@
 
     @csrf
     {{ method_field('PATCH') }}
-    @include('acta.form')
+    @include('acta.form',['modo'=>'Editar'])
 
 </form>

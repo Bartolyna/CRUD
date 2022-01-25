@@ -1,4 +1,5 @@
-    
+    <h1>{{ $modo }} acta</h1>
+
     <label for="Usuario">Nombre de usuario</label>
     <input type="text" name="Usuario" value="{{ isset($acta->Usuario)?$acta->Usuario:'' }}" id="Usuario">
     <br>
@@ -46,4 +47,4 @@
     <a href="{{ url('acta')}}">Ir al index</a>
 
 
-    <input type="submit" value="Enviar">
+    <input type="submit" value="{{ $modo }} acta">
