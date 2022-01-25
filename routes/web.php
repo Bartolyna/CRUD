@@ -26,8 +26,9 @@ Route::get('/acta', function () {
 Route::get('/acta/create', [ActaController::class, 'create']);
  */
 
- Route::resource('acta', ActaController::class);
- Auth::routes();
+ Route::resource('acta', ActaController::class)->middleware('auth');
+ 
+ Auth::routes(['register'=>false, 'reset'=>false]);
 
  Route::get('/home', [ActaController::class, 'index'])->name('home');
 
