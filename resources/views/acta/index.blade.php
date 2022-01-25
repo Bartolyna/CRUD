@@ -1,3 +1,8 @@
+@extends('layouts.app')
+@section('content')
+<div class="container">
+
+
 @if (Session::has('mensaje'))
  {{Session::get('mensaje')}}   
 @endif
@@ -8,9 +13,9 @@
     <thead class="thead-light">
         <tr>
             <th>#</th>
-            <th>Nombre de Usuario</th>
+            <th>Usuario</th>
             <th>Ubicacion</th>
-            <th>Tipo de Solocitud</th>
+            <th>T. Solicitud</th>
             <th>Fecha</th>
             <th>Descripcion</th>
             <th>Serial</th>
@@ -61,3 +66,6 @@
         
 
 </table>
+
+</div>
+@endsection
