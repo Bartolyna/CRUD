@@ -8,7 +8,7 @@
 @endif
 
 
-<a href="{{ url('acta/create')}}">Creacion de acta</a>
+<a href="{{ url('acta/create')}}" class="btn btn-success">Creacion de acta</a>
 <table class="table table-light">   
     <thead class="thead-light">
         <tr>
@@ -45,15 +45,15 @@
             <td>{{ $acta->Observacion }}</td>
             <td>{{ $acta->Documento }}</td>
             <td>
-                <a href="{{ url('acta/'.$acta->id.'/edit') }}">Editar</a>
+                <a href="{{ url('acta/'.$acta->id.'/edit') }}" class="btn btn-warning">Editar</a>
                  
                 
                 /
             
-            <form action="{{ url('acta/'.$acta->id) }}" method="post">
+            <form action="{{ url('acta/'.$acta->id) }}" class="d-inline" method="post">
             @csrf
             {{ method_field('DELETE')}}    
-                <input type="submit" onclick="return confirm('¿Quieres borrar?') " value="Borrar">
+            <input type="submit" onclick="return confirm('¿Quieres borrar?') " class="btn btn-danger" value="Borrar">
 
             </form>
                 
